@@ -11,7 +11,7 @@ const text = `Добрейшего дня наши дорогие моряки �
 const AboutUs = React.forwardRef((props, ref) => {
     return (
         <section className="about-us" ref={ref}>
-            <h1>Карамба! 🖖</h1>
+            <h1>Карамба! <span role="img" aria-label="deny">🖖</span></h1>
             {text.map((part, index) => <p key={index}>{part}</p>)}
         </section>
     );

@@ -1,5 +1,7 @@
 import React, { useCallback, useContext, useEffect, useRef } from 'react';
-import { DefaultPlayer as Video } from 'react-html5video';
+import { DefaultPlayer as Video } from 'react-html5video-ssr';
+
+import 'react-html5video-ssr/dist/styles.css';
 
 import AppContext from '../../app-context';
 
@@ -37,30 +39,26 @@ const Header = () => {
 
     return (
         <header className="header" ref={ref}>
-            {(typeof window !== 'undefined') ? (
-                <>
-                    <Video autoPlay loop muted controls={[]}>
-                        <source src="/header.webm" type="video/webm" />
-                        <source src="/header.mp4" type="video/mp4" />
-                    </Video>
-                    <div className="header-content-wrapper">
-                        <div className="header-content">
-                            <div className="logo-wrapper">
-                                <img src="/logo2.png" alt="" className="logo" />
-                            </div>
-                            <div className="header-main">
-                                <h1 className="title-name">Kraken TT</h1>
-                                <h2 className="title-type">Sailing Crew</h2>
-                                <h3 className="title-city">Moscow</h3>
-                            </div>
-                        </div>
-                        <nav className="menu">
-                            <a href="#" onClick={handleGoToAboutUs}>О нас</a>
-                            <a href="https://truewind.ru/calendar/yq2020/" rel="noreferrer" target="_blank">Яхт-квест 2020</a>
-                        </nav>
+            <Video autoPlay loop muted controls={[]}>
+                <source src="/header.webm" type="video/webm" />
+                <source src="/header.mp4" type="video/mp4" />
+            </Video>
+            <div className="header-content-wrapper">
+                <div className="header-content">
+                    <div className="logo-wrapper">
+                        <img src="/logo2.png" alt="" className="logo" />
                     </div>
-                </>
-            ) : null}
+                    <div className="header-main">
+                        <h1 className="title-name">Kraken TT</h1>
+                        <h2 className="title-type">Sailing Crew</h2>
+                        <h3 className="title-city">Moscow</h3>
+                    </div>
+                </div>
+                <nav className="menu">
+                    <a href="#" onClick={handleGoToAboutUs}>О нас</a>
+                    <a href="https://truewind.ru/calendar/yq2020/" rel="noreferrer" target="_blank">Яхт-квест 2020</a>
+                </nav>
+            </div>
         </header>
     );
 };
