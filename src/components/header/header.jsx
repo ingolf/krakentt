@@ -3,7 +3,7 @@ import React, { useCallback, useContext, useEffect, useRef } from 'react';
 import { isMobile } from 'react-device-detect';
 import { DefaultPlayer as Video } from 'react-html5video-ssr';
 
-import { scrollCustomImplementation } from '../../utils/index';
+import { scrollCustomImplementation } from '../../utils';
 import AppContext from '../../app-context';
 
 import './header.scss';
