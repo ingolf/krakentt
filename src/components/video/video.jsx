@@ -14,7 +14,10 @@ const videos = [
 const Video = React.forwardRef((props, ref) => {
     return (
         <section className="video" ref={ref}>
-            {videos.map(({id, title}, index) => <VideoItem key={index} videoId={id} title={title} />)}
+            <h2 className="title">Мы на видео</h2>
+            <div className="list">
+                {videos.map(({id, title}, index) => <VideoItem key={index} videoId={id} title={title} />)}
+            </div>
         </section>
     );
 });

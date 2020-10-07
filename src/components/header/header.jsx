@@ -63,7 +63,7 @@ const Header = () => {
                 </div>
                 <nav className="menu">
                     <a href="/" onClick={handleGoToAboutUs}>О нас</a>
-                    <a href="/" onClick={handleGoToVideo}>Наши видео</a>
+                    <a href="/" onClick={handleGoToVideo}>Мы на видео</a>
                     <a href="https://truewind.ru/calendar/yq2020/" rel="noreferrer" target="_blank">Яхт-квест 2020</a>
                 </nav>
             </div>

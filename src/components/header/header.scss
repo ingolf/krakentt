@@ -1,9 +1,11 @@
+@import '../../styles/constants.scss';
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
 $logoRadius: 80px;
 
-.header {
+.header
+{
     position: fixed;
     overflow: hidden;
     z-index: -10;
@@ -16,7 +18,8 @@ $logoRadius: 80px;
 
     @include fullPage();
 
-    video {
+    video
+    {
         position: absolute;
         top: var(--video-top, 0);
         left: 0;
@@ -96,17 +99,72 @@ $logoRadius: 80px;
             margin-right: 16px;
             padding: 0 5px;
 
-            font-size: 1.4em;
+            font-size: 2em;
             color: $mainOrange;
             text-shadow: 0 0 2px black;
             text-decoration: none;
             border-radius: 3px;
+            cursor: pointer;
 
             transition: all .1s ease-in-out;
 
             &:hover
             {
                 transform: translateX(72px) scale(1.4);
+            }
+        }
+    }
+}
+
+@media (max-width: $tabletWidth) {
+    .header
+    {
+        .header-content-wrapper
+        {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
+        }
+
+        .header-content
+        {
+            border-radius: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .logo
+        {
+            width: 130px;
+            height: 130px;
+        }
+
+        .title-name
+        {
+            font-size: 3em;
+        }
+
+        .title-type,
+        .title-city
+        {
+            font-size: 1.2em;
+        }
+
+        .menu
+        {
+            margin: 10px;
+
+            a
+            {
+                font-size: 2em;
+
+                &:hover
+                {
+                    transform: none;
+                }
             }
         }
     }

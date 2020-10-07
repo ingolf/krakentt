@@ -1,15 +1,56 @@
 @import '../../styles/colors.scss';
+@import '../../styles/constants.scss';
 @import '../../styles/mixins.scss';
 
 .video
 {
-    display: flex;
-    flex-wrap: wrap;
-
     @include fullPage();
 
     padding: 30px 100px;
 
     color: white;
     background-color: $mainOrange;
+
+    .list
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    & > .title
+    {
+        margin: 0 10px;
+
+        font-size: 5em;
+    }
+
+    .video-item iframe
+    {
+        width: 560px;
+        height: 315px;
+
+        border-radius: 15px;
+        box-shadow: 0 0 10px 1px rgba(black, .3);
+    }
+}
+
+@media (max-width: $tabletWidth) {
+    .video
+    {
+        padding: 10px 20px;
+
+        & > .title
+        {
+            margin: 0 10px 20px;
+
+            font-size: 3em;
+        }
+
+        .video-item,
+        .video-item iframe
+        {
+            width: calc(100vw - 60px);
+            height: calc((100vw - 60px) / 1.77);
+        }
+    }
 }

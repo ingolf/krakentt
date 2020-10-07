@@ -12,7 +12,7 @@ const IndexPage = () => {
 
     return (
         <Layout>
-            <AppContext.Provider value={{aboutUsRef}}>
+            <AppContext.Provider value={{aboutUsRef, videoRef}}>
                 <Header />
                 <AboutUs ref={aboutUsRef} />
                 <Video ref={videoRef} />

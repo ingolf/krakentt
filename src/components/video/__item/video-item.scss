@@ -1,3 +1,5 @@
+@import '../../../styles/constants.scss';
+
 .video-item
 {
     margin: 10px;
@@ -7,5 +9,15 @@
         color: white;
         margin: 0 0 10px;
         font-size: 3em;
+    }
+}
+
+@media (max-width: $tabletWidth) {
+    .video-item
+    {
+        .title
+        {
+            font-size: 2em;
+        }
     }
 }
