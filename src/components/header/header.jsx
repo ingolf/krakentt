@@ -50,8 +50,8 @@ const Header = () => {
         <header className="header" ref={ref}>
             {isMobile ? (
                 <Video autoPlay loop muted controls={[]} poster="/poster.png">
-                    <source src="/header-mobile.webm" type="video/webm" />
-                    <source src="/header-mobile.mp4" type="video/mp4" />
+                    <source src="/header-mobile-1.webm" type="video/webm" />
+                    <source src="/header-mobile-1.mp4" type="video/mp4" />
                 </Video>
             ) : (
                 <Video autoPlay loop muted controls={[]} poster="/poster.png">
