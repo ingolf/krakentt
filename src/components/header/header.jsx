@@ -3,7 +3,7 @@ import React, { useCallback, useContext, useEffect, useRef } from 'react';
 import { isMobile } from 'react-device-detect';
 import { DefaultPlayer as Video } from 'react-html5video-ssr';
 
-import { scrollCustomImplementation } from '../../utils';
+import { scrollCustomImplementation } from '../../utils/utils';
 import AppContext from '../../app-context';
 
 import './header.scss';
@@ -15,7 +15,9 @@ const Header = () => {
     const handleOnScroll = useCallback(throttle(() => {
         if (typeof window === 'undefined') return;
 
-        const videoTop = window.innerHeight > window.scrollY ? - window.scrollY / 2 : window.innerHeight;
+        const videoTop = isMobile
+            ? 0
+            : window.innerHeight > window.scrollY ? - window.scrollY / 2 : window.innerHeight;
         const menuTop = window.scrollY > window.innerHeight / (isMobile ? 2 : 3) ? '-500px' : '0px';
 
         ref.current.style.setProperty('--video-top', `${videoTop}px`);
