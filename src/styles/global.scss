@@ -6,3 +6,13 @@ html, body {
 
     font-family: 'Signika', sans-serif;
 }
+
+*
+{
+    box-sizing: border-box;
+}
+
+header, section
+{
+    min-height: 500px;
+}

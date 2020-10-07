@@ -45,7 +45,7 @@ const Header = () => {
                         <img src="/logo2.png" alt="" className="logo" />
                     </div>
                     <div className="header-main">
-                        <h1 className="title-name">KrakenTT</h1>
+                        <h1 className="title-name">Kraken TT</h1>
                         <h2 className="title-type">Sailing Crew</h2>
                         <h3 className="title-city">Moscow</h3>
                     </div>
