@@ -37,10 +37,12 @@ const Header = () => {
 
     return (
         <header className="header" ref={ref}>
-            <Video autoPlay loop muted controls={[]}>
-                <source src="/header.webm" type="video/webm" />
-                <source src="/header.mp4" type="video/mp4" />
-            </Video>
+            {(typeof window === 'undefined') ? (
+                <Video autoPlay loop muted controls={[]}>
+                    <source src="/header.webm" type="video/webm" />
+                    <source src="/header.mp4" type="video/mp4" />
+                </Video>
+            ) : null}
             <div className="header-content-wrapper">
                 <div className="header-content">
                     <div className="logo-wrapper">
