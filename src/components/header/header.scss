@@ -40,6 +40,7 @@ $logoRadius: 80px;
         left: 0;
 
         transform: translateY($top);
+        transition: all .3s ease-in-out;
     }
 
     .header-content
