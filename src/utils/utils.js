@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export function scrollCustomImplementation(element) {
     let start = null;
     let target = element && element ? element.getBoundingClientRect().top : 0;
