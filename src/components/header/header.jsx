@@ -19,7 +19,7 @@ const Header = () => {
 
         ref.current.style.setProperty('--video-top', `${videoTop}px`);
         ref.current.style.setProperty('--menu-top', menuTop);
-    }, 30), [ref]);
+    }, 10), [ref]);
 
     const handleGoToAboutUs = useCallback((e) => {
         e.preventDefault();
