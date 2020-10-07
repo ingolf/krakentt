@@ -1,0 +1,21 @@
+@import '../../styles/colors.scss';
+
+$color1: rgba($mainOrange, .1);
+$color11: rgba($mainOrange, .12);
+$color2: rgba(black, .1);
+$color22: rgba(black, .12);
+
+.footer
+{
+    padding: 25px 100px;
+
+    color: $mainOrange;
+    background: repeating-linear-gradient(
+        45deg,
+        $color1,
+        $color11 50px,
+        $color2 50px,
+        $color22 100px
+    );
+    box-shadow: 0 0 10px 10px $color22;
+}

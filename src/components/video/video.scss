@@ -1,0 +1,15 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.video
+{
+    display: flex;
+    flex-wrap: wrap;
+
+    @include fullPage();
+
+    padding: 30px 100px;
+
+    color: white;
+    background-color: $mainOrange;
+}
