@@ -5,14 +5,14 @@ import AppContext from '../../app-context';
 
 import './header.scss';
 
-const win = window;
-
 const Header = () => {
     const ref = useRef();
     const {aboutUsRef} = useContext(AppContext);
 
     const handleOnScroll = useCallback(() => {
-        const videoTop = win.innerHeight > win.scrollY ? - win.scrollY / 2 : win.innerHeight;
+        if (typeof window === 'undefined') return;
+
+        const videoTop = window.innerHeight > window.scrollY ? - window.scrollY / 2 : window.innerHeight;
 
         ref.current.style.setProperty('--video-top', `${videoTop}px`);
     }, [ref]);
