@@ -8,14 +8,14 @@
     "gatsby": "^2.1.37",
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-plugin-sass": "^2.3.15",
+    "lodash": "^4.17.20",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
+    "react-device-detect": "^1.14.0",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
-    "react-html5video": "^2.5.1",
-    "react-html5video-ssr": "^2.5.1",
-    "react-media": "^1.10.0"
+    "react-html5video-ssr": "^2.5.1"
   },
   "devDependencies": {
     "prettier": "^1.16.4"

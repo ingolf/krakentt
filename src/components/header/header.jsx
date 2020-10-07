@@ -1,6 +1,7 @@
+import throttle from 'lodash/throttle';
 import React, { useCallback, useContext, useEffect, useRef } from 'react';
+import { isMobile } from 'react-device-detect';
 import { DefaultPlayer as Video } from 'react-html5video-ssr';
-import Media from 'react-media';
 
 import AppContext from '../../app-context';
 
@@ -10,7 +11,7 @@ const Header = () => {
     const ref = useRef();
     const {aboutUsRef, videoRef} = useContext(AppContext);
 
-    const handleOnScroll = useCallback(() => {
+    const handleOnScroll = useCallback(throttle(() => {
         if (typeof window === 'undefined') return;
 
         const videoTop = window.innerHeight > window.scrollY ? - window.scrollY / 2 : window.innerHeight;
@@ -18,7 +19,7 @@ const Header = () => {
 
         ref.current.style.setProperty('--video-top', `${videoTop}px`);
         ref.current.style.setProperty('--menu-top', menuTop);
-    }, [ref]);
+    }, 30), [ref]);
 
     const handleGoToAboutUs = useCallback((e) => {
         e.preventDefault();
@@ -47,21 +48,17 @@ const Header = () => {
 
     return (
         <header className="header" ref={ref}>
-            <Media queries={{tablet: "(max-width: 1024px)"}}>
-                {matches =>
-                    matches.tablet ? (
-                        <Video autoPlay loop muted controls={[]} poster="/poster.png">
-                            <source src="/header-mobile.webm" type="video/webm" />
-                            <source src="/header-mobile.mp4" type="video/mp4" />
-                        </Video>
-                    ) : (
-                        <Video autoPlay loop muted controls={[]} poster="/poster.png">
-                            <source src="/header.webm" type="video/webm" />
-                            <source src="/header.mp4" type="video/mp4" />
-                        </Video>
-                    )
-                }
-            </Media>
+            {isMobile ? (
+                <Video autoPlay loop muted controls={[]} poster="/poster.png">
+                    <source src="/header-mobile.webm" type="video/webm" />
+                    <source src="/header-mobile.mp4" type="video/mp4" />
+                </Video>
+            ) : (
+                <Video autoPlay loop muted controls={[]} poster="/poster.png">
+                    <source src="/header.webm" type="video/webm" />
+                    <source src="/header.mp4" type="video/mp4" />
+                </Video>
+            )}
             <div className="header-content-wrapper">
                 <div className="header-content">
                     <div className="logo-wrapper">
