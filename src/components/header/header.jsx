@@ -25,6 +25,8 @@ const Header = () => {
     }, [aboutUsRef]);
 
     useEffect(() => {
+        if (typeof window === 'undefined') return;
+
         window.addEventListener('scroll', handleOnScroll);
 
         return () => {
