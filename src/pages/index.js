@@ -1,18 +1,21 @@
-import React from "react"
+import React from 'react';
+import AppContext from '../app-context';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Hero from "../components/hero"
-import Content from "../components/content"
-import CallToAction from "../components/cta"
+import AboutUs from '../components/about-us/about-us';
+import Header from '../components/header/header';
+import Layout from '../components/layout/layout';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO />
-    <Hero />
-    <Content />
-    <CallToAction />
-  </Layout>
-)
+const IndexPage = () => {
+    const aboutUsRef = React.createRef();
 
-export default IndexPage
+    return (
+        <Layout>
+            <AppContext.Provider value={{aboutUsRef}}>
+                <Header />
+                <AboutUs ref={aboutUsRef} />
+            </AppContext.Provider>
+        </Layout>
+    )
+};
+
+export default IndexPage;
