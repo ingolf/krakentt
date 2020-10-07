@@ -37,7 +37,7 @@ const Header = () => {
 
     return (
         <header className="header" ref={ref}>
-            {(typeof window === 'undefined') ? (
+            {(typeof window !== 'undefined') ? (
                 <Video autoPlay loop muted controls={[]}>
                     <source src="/header.webm" type="video/webm" />
                     <source src="/header.mp4" type="video/mp4" />
