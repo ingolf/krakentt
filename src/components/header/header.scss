@@ -21,7 +21,7 @@ $logoRadius: 80px;
     video
     {
         position: absolute;
-        top: var(--video-top, 0);
+        transform: translateY(var(--video-top, 0));
         left: 0;
         @include fullPage();
         object-fit: cover;
