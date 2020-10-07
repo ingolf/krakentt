@@ -1,5 +1,6 @@
 import React, { useCallback, useContext, useEffect, useRef } from 'react';
 import { DefaultPlayer as Video } from 'react-html5video-ssr';
+import Media from 'react-media';
 
 import AppContext from '../../app-context';
 
@@ -46,10 +47,21 @@ const Header = () => {
 
     return (
         <header className="header" ref={ref}>
-            <Video autoPlay loop muted controls={[]} poster="/poster.png">
-                <source src="/header.webm" type="video/webm" />
-                <source src="/header.mp4" type="video/mp4" />
-            </Video>
+            <Media queries={{tablet: "(max-width: 1024px)"}}>
+                {matches =>
+                    matches.tablet ? (
+                        <Video autoPlay loop muted controls={[]} poster="/poster.png">
+                            <source src="/header-mobile.webm" type="video/webm" />
+                            <source src="/header-mobile.mp4" type="video/mp4" />
+                        </Video>
+                    ) : (
+                        <Video autoPlay loop muted controls={[]} poster="/poster.png">
+                            <source src="/header.webm" type="video/webm" />
+                            <source src="/header.mp4" type="video/mp4" />
+                        </Video>
+                    )
+                }
+            </Media>
             <div className="header-content-wrapper">
                 <div className="header-content">
                     <div className="logo-wrapper">
