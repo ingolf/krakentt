@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Signika:wght@300&display=swap');
+@import '../styles/colors.scss';
 
 html, body {
     padding: 0;
@@ -15,4 +16,14 @@ html, body {
 header, section
 {
     min-height: 500px;
+}
+
+a
+{
+    color: $mainOrange;
+}
+
+p
+{
+    font-size: 1.2em;
 }

@@ -13,6 +13,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "react-html5video": "^2.5.1",
     "react-html5video-ssr": "^2.5.1"
   },
   "devDependencies": {

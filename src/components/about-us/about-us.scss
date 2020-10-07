@@ -1,15 +1,26 @@
+@import '../../styles/mixins.scss';
+
+$color1: rgba(white, .1);
+$color11: rgba(white, .12);
+$color2: rgba(black, .01);
+$color22: rgba(black, .012);
+
 .about-us
 {
     position: relative;
 
-    width: 100vw;
-    height: 100vh;
-    max-height: 100vh;
+    @include fullPage();
 
     margin-top: 100vh;
     padding: 100px;
 
-    background-color: white;
+    background: repeating-linear-gradient(
+        -45deg,
+        $color1,
+        $color11 50px,
+        $color2 50px,
+        $color22 100px
+    ), white;
 
     h1
     {

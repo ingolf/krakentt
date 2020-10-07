@@ -1,22 +1,22 @@
 import React, { useCallback, useContext, useEffect, useRef } from 'react';
 import { DefaultPlayer as Video } from 'react-html5video-ssr';
 
-import 'react-html5video-ssr/dist/styles.css';
-
 import AppContext from '../../app-context';
 
 import './header.scss';
 
 const Header = () => {
     const ref = useRef();
-    const {aboutUsRef} = useContext(AppContext);
+    const {aboutUsRef, videoRef} = useContext(AppContext);
 
     const handleOnScroll = useCallback(() => {
         if (typeof window === 'undefined') return;
 
         const videoTop = window.innerHeight > window.scrollY ? - window.scrollY / 2 : window.innerHeight;
+        const menuTop = window.scrollY > window.innerHeight / 2 ? '-500px' : '0px';
 
         ref.current.style.setProperty('--video-top', `${videoTop}px`);
+        ref.current.style.setProperty('--menu-top', menuTop);
     }, [ref]);
 
     const handleGoToAboutUs = useCallback((e) => {
@@ -25,6 +25,13 @@ const Header = () => {
         if (aboutUsRef && aboutUsRef.current)
             aboutUsRef.current.scrollIntoView({ behavior: 'smooth' });
     }, [aboutUsRef]);
+
+    const handleGoToVideo = useCallback((e) => {
+        e.preventDefault();
+
+        if (videoRef && videoRef.current)
+            videoRef.current.scrollIntoView({ behavior: 'smooth' });
+    }, [videoRef]);
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
@@ -39,7 +46,7 @@ const Header = () => {
 
     return (
         <header className="header" ref={ref}>
-            <Video autoPlay loop muted controls={[]}>
+            <Video autoPlay loop muted controls={[]} poster="/poster.png">
                 <source src="/header.webm" type="video/webm" />
                 <source src="/header.mp4" type="video/mp4" />
             </Video>
@@ -55,7 +62,8 @@ const Header = () => {
                     </div>
                 </div>
                 <nav className="menu">
-                    <a href="#" onClick={handleGoToAboutUs}>О нас</a>
+                    <a href="/" onClick={handleGoToAboutUs}>О нас</a>
+                    <a href="/" onClick={handleGoToVideo}>Наши видео</a>
                     <a href="https://truewind.ru/calendar/yq2020/" rel="noreferrer" target="_blank">Яхт-квест 2020</a>
                 </nav>
             </div>
