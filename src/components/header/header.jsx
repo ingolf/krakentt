@@ -58,8 +58,8 @@ const Header = () => {
                 </Video>
             ) : (
                 <Video autoPlay loop muted controls={[]} poster="/poster.png">
-                    <source src="/header.webm" type="video/webm" />
-                    <source src="/header.mp4" type="video/mp4" />
+                    <source src="/header-1.webm" type="video/webm" />
+                    <source src="/header-1.mp4" type="video/mp4" />
                 </Video>
             )}
             <div className="header-content-wrapper">
