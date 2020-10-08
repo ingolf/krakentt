@@ -4,8 +4,6 @@
 
 .video
 {
-    @include fullPage();
-
     padding: 30px 100px;
 
     color: white;
@@ -41,7 +39,7 @@
 
         & > .title
         {
-            margin: 0 10px 20px;
+            margin: 20px 10px;
 
             font-size: 3em;
         }
@@ -50,6 +48,10 @@
         .video-item iframe
         {
             width: calc(100vw - 60px);
+        }
+
+        .video-item iframe
+        {
             height: calc((100vw - 60px) / 1.77);
         }
     }
