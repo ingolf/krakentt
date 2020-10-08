@@ -79,7 +79,7 @@
         .item-img
         {
             min-width: auto;
-            max-width: 300px;
+            max-width: 200px;
 
             transform: rotate(0);
         }
@@ -96,7 +96,7 @@
 
             &::after
             {
-                font-size: 3em;
+                font-size: 2em;
             }
         }
     }
