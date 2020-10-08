@@ -13,7 +13,7 @@ $color22: rgba(black, .012);
     @include fullPage();
 
     margin-top: 100vh;
-    padding: 100px;
+    padding: 50px 100px;
 
     background: repeating-linear-gradient(
         -45deg,
@@ -23,10 +23,20 @@ $color22: rgba(black, .012);
         $color22 100px
     ), white;
 
-    h1
+    h2
     {
         font-size: 3em;
-        margin: 10px 0;
+        margin: 20px 0;
+    }
+
+    h2 ~ h2
+    {
+        margin-top: 50px;
+    }
+
+    .team-gallery
+    {
+        margin-top: 50px;
     }
 }
 

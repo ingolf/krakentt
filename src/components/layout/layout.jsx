@@ -19,7 +19,7 @@ const Layout = ({children}) => {
                 <meta property="og:site_name" content={title} />
                 <meta property="og:title" content={title} />
                 <meta property="og:description" content={description} />
-                <meta property="og:image" itemprop="image" content="/logo.png" />
+                <meta property="og:image" itemprop="image" content="https://krakentt.ru/logo.png" />
                 <meta property="og:type" content="website" />
                 <meta property="og:updated_time" content={Date.now()} />
             </Helmet>

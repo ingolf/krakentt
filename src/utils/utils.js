@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-export function scrollCustomImplementation(element) {
+export function scrollCustomImplementation(element, offset = 0) {
     let start = null;
     let target = element && element ? element.getBoundingClientRect().top : 0;
     let firstPos = window.pageYOffset || document.documentElement.scrollTop;
@@ -33,7 +33,7 @@ export function scrollCustomImplementation(element) {
         // if target > 0 (not back to top), the positon is current pos + (target pos * percentage of duration)
 
         pos = target === 0 ? firstPos - firstPos * easeInPercentage : firstPos + target * easeInPercentage;
-        window.scrollTo(0, pos);
+        window.scrollTo(0, pos + offset);
 
         if (target !== 0 && pos >= firstPos + target || target === 0 && pos <= 0) {
             cancelAnimationFrame(start);
