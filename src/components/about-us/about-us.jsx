@@ -11,16 +11,13 @@ const text = `Добрейшего дня наши дорогие моряки �
 Добро пожаловать на борт!`.split('\n');
 
 const team = [
+    {name: 'Игорь', duty: '', img: '/team/1.jpg'},
     {name: 'Александр', duty: '', img: '/team/2.jpg'},
     {name: 'Сергей', duty: '', img: '/team/3.jpeg'},
     {name: 'Екатерина', duty: '', img: '/team/4.jpeg'},
     {name: 'Степан', duty: '', img: '/team/5.jpg'},
     {name: 'Анна', duty: '', img: '/team/6.jpg'},
-].sort(() => Math.random() - 0.5);
-
-team.unshift(
-    {name: 'Игорь', duty: '', img: '/team/1.jpg'}
-);
+];
 
 const AboutUs = React.forwardRef((props, ref) => {
     return (
