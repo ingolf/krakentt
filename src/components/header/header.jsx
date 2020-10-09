@@ -10,7 +10,7 @@ import './header.scss';
 
 const Header = () => {
     const ref = useRef();
-    const {aboutUsRef, videoRef} = useContext(AppContext);
+    const {aboutUsRef} = useContext(AppContext);
 
     const handleOnScroll = useCallback(throttle(() => {
         if (typeof window === 'undefined') return;
@@ -31,12 +31,12 @@ const Header = () => {
         scrollCustomImplementation(aboutUsRef.current);
     }, [aboutUsRef]);
 
-    const handleGoToVideo = useCallback((e) => {
+    /* const handleGoToVideo = useCallback((e) => {
         e.preventDefault();
 
         if (videoRef && videoRef.current)
         scrollCustomImplementation(videoRef.current);
-    }, [videoRef]);
+    }, [videoRef]); */
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
@@ -75,7 +75,7 @@ const Header = () => {
                 </div>
                 <nav className="menu">
                     <a href="/" onClick={handleGoToAboutUs}>О нас</a>
-                    <a href="/" onClick={handleGoToVideo}>Мы на видео</a>
+                    {/* <a href="/" onClick={handleGoToVideo}>Мы на видео</a> */}
                     <a href="https://truewind.ru/calendar/yq2020/" rel="noreferrer" target="_blank">Яхт-квест 2020</a>
                 </nav>
             </div>
